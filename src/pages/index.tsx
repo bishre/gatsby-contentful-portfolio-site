@@ -10,6 +10,7 @@ import '../styles/tailwind.css';
 import Education from "../components/education";
 import Experience from "../components/experience";
 import Projects from "../components/projects";
+import About from "../components/about";
 
 interface ContentfulHero {
   node: {
@@ -51,6 +52,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             />
           </div>
         ))}
+        <About />
         <Projects />
         {/* <Education />
         <Experience /> */}

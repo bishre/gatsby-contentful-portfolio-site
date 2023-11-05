@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
+import ComponentWrapper from './componentWrapper'
 
 type Props = {}
 
@@ -25,11 +26,11 @@ const Projects = (props: Props) => {
   const { allContentfulProject } = data
   const projectEntries = allContentfulProject.edges
   return (
-    <div>
-      <h2 className='text-3xl my-8'>Recent Projects</h2>
-      <div className='grid grid-cols-2 gap-4 m-4'>
+    <ComponentWrapper>
+      <h2 className='text-3xl my-12'>Recent Projects</h2>
+      <div className='grid grid-cols-2 gap-4'>
         {projectEntries.map(({ node }) => (
-          <div className='p-4'>
+          <div className=''>
             <div className='rounded overflow-hidden group'>
               <img className='transition transition-transform scale-110 group-hover:scale-100' src={node.image.file.url} alt="" />
             </div>
@@ -43,7 +44,7 @@ const Projects = (props: Props) => {
           </div>
         ))}
       </div>
-    </div>
+    </ComponentWrapper>
   )
 }
 
