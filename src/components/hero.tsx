@@ -15,7 +15,7 @@ type Props = {
 }
 
 const Hero = ({ title, description, heroImage }: Props) => {
-  const isMobile = window.innerWidth < 1024 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024 
   return (
     <div className='relative'>
       <div className='absolute w-50 top-1/2 text-white text-3xl transform -translate-y-1/2 mx-16 z-10'>
