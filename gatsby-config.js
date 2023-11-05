@@ -7,6 +7,11 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -15,6 +20,14 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `${process.env.spaceId}`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `${process.env.accessToken}`,
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -39,5 +52,20 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-plugin-google-fonts",
+      options: {
+        fonts: [
+          "Work Sans:400", // Replace with the fonts you want
+        ],
+        display: "swap", // Optional: Use "block", "swap", or "fallback"
+      },
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
+      }
+    }
   ],
 }
