@@ -19,11 +19,11 @@ const Hero = ({ title, description, heroImage }: Props) => {
   return (
     <div className='relative'>
       <div className='absolute w-50 top-1/2 text-white text-3xl transform -translate-y-1/2 mx-16 z-10'>
-        <h2 className='text-xl lg:text-5xl lg:my-8'>{title}</h2>
+        <h2 className='text-xl lg:text-6xl lg:my-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline-block text-transparent bg-clip-text'>{title} (Beev)</h2>
         <p className='text-sm lg:text-xl'>{description.description}</p>
       </div>
       <RatioContainer width={isMobile ? 4 : 16} height={isMobile ? 5 : 9}>
-        <img className='w-full h-full object-cover' src={`${heroImage.file.url}`} alt="" />
+        <img className='w-full h-full object-cover brightness-50' src={`${heroImage.file.url}`} alt="" />
       </RatioContainer>
     </div>
   )
