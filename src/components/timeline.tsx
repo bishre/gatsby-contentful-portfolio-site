@@ -11,7 +11,7 @@ const Timeline = (props: Props) => {
         <ul className="grid grid-cols-12">
           <li className="col-start-1 col-span-3">
             <div>
-              <h3 className="text-left">1.2018 - 12.2020</h3>
+              <h3 className="text-left">1.2018 - 12.2018</h3>
               <div className="flex items-center mt-1 mb-2">
                 <div className="rounded-full w-4 h-4 row-start-2 col-span-12 bg-gradient-to-br from-indigo-500 to-pink-500"></div>
                 <div className="h-1 w-full bg-purple-500"></div>
