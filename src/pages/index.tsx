@@ -12,6 +12,7 @@ import Experience from "../components/experience";
 import Projects from "../components/projects";
 import About from "../components/about";
 import Skills from "../components/skills";
+import Timeline from "../components/timeline";
 
 interface ContentfulHero {
   node: {
@@ -56,6 +57,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
         <About />
         <Projects />
         <Skills />
+        <Timeline />
         {/* <Education />
         <Experience /> */}
       </div>
