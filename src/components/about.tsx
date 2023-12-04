@@ -3,10 +3,15 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import ComponentWrapper from './componentWrapper'
+import { useInView } from 'react-intersection-observer';
 
 type Props = {}
 
 const About = (props: Props) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Trigger animation only once
+    threshold: 0.2
+  });
   const data = useStaticQuery(graphql`
     query {
       allContentfulTextImageDescription {
@@ -37,7 +42,7 @@ const About = (props: Props) => {
   return (
     <ComponentWrapper>
       {aboutEntries.map(({ node }) => (
-        <div className='lg:grid grid-cols-2 gap-4'>
+        <div ref={ref} className={`lg:grid grid-cols-2 gap-4 ${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
           <div className='w-40 h-40 lg:w-80 lg:h-80 mb-4 mx-auto rounded-full overflow-hidden'>
             <img className='' src={node.image.file.url} alt="" />
           </div>

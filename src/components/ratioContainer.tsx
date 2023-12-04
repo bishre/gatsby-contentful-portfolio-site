@@ -1,6 +1,10 @@
 import React from 'react'
 
-type Props = {}
+type Props = {
+  width: number;
+  height: number;
+  children: JSX.Element
+}
 
 const RatioContainer = ({ width, height, children }: Props) => {
   const paddingPercentage = (width / height) * 100;
