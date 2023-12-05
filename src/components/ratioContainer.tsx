@@ -7,7 +7,7 @@ type Props = {
 }
 
 const RatioContainer = ({ width, height, children }: Props) => {
-  const paddingPercentage = (width / height) * 100;
+  const paddingPercentage = (height / width) * 100;
 
   return (
     <div className="relative" style={{ paddingTop: `${paddingPercentage}%` }}>
