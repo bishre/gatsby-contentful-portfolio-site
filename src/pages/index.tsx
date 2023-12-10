@@ -49,7 +49,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
           <div key={node.id}>
             <Hero
               title={node.title}
-              description={node.description}
+              description={node.description.description}
               heroImage={node.heroImage}
             />
           </div>

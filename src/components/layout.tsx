@@ -12,6 +12,7 @@ import Header from "./header"
 import "./layout.css"
 // src/layouts/Layout.js or in a global stylesheet
 import "../styles/tailwind.css";
+import LanguageSwitcher from "./languageSwitcher";
 
 
 const Layout = ({ children }) => {
@@ -28,11 +29,11 @@ const Layout = ({ children }) => {
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
-      <div>
+      <div className="relative">
+        <LanguageSwitcher />
         <main>{children}</main>
         <footer
           style={{
-            marginTop: `var(--space-5)`,
             fontSize: `var(--font-sx)`,
             padding: `var(--space-1)`,
             backgroundColor: `var(--color-primary)`
