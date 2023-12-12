@@ -13,6 +13,7 @@ import "./layout.css"
 // src/layouts/Layout.js or in a global stylesheet
 import "../styles/tailwind.css";
 import LanguageSwitcher from "./languageSwitcher";
+import Footer from "./footer";
 
 
 const Layout = ({ children }) => {
@@ -32,15 +33,7 @@ const Layout = ({ children }) => {
       <div className="relative">
         <LanguageSwitcher />
         <main>{children}</main>
-        <footer
-          style={{
-            fontSize: `var(--font-sx)`,
-            padding: `var(--space-1)`,
-            backgroundColor: `var(--color-primary)`
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Bibhor Shrestha
-        </footer>
+        <Footer />
       </div>
     </>
   )
