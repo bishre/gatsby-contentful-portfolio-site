@@ -14,9 +14,16 @@ import "./layout.css"
 import "../styles/tailwind.css";
 import LanguageSwitcher from "./languageSwitcher";
 import Footer from "./footer";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 
 const Layout = ({ children }) => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -29,6 +36,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <motion.div className="progress-bar" style={{ scaleX }} />
       {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
       <div className="relative">
         <LanguageSwitcher />
