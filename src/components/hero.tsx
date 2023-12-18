@@ -23,7 +23,7 @@ const Hero = ({ title, description, heroImage }: Props) => {
   useEffect(() => {
     if (!inView) return
     const textElements = document.querySelectorAll(".stagger")
-    console.log(textElements)
+
     gsap.from(textElements, {
       duration: 0.4,
       opacity: 0,
@@ -33,7 +33,7 @@ const Hero = ({ title, description, heroImage }: Props) => {
     })
   }, [inView])
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768
   return (
     <div className='relative'>
       <div className='absolute w-50 top-1/2 text-white text-3xl transform -translate-y-1/2 mx-16 z-10'>
