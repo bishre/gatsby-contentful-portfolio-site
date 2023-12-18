@@ -36,7 +36,7 @@ const About = (props: Props) => {
 
   const options = {
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <p className='text-sm my-4'>{children}</p>
+      [BLOCKS.PARAGRAPH]: (node, children) => <p className='text-sm md:text-xl my-2'>{children}</p>
     },
   }
   return (
@@ -47,8 +47,8 @@ const About = (props: Props) => {
             <img className='transition transform translate-y-0 hover:-translate-y-4 hover:cursor-pointer' src={node.image.file.url} alt="" />
           </div>
           <div className='my-auto'>
-            <h2 className='text-xl'>{node.title}</h2>
-            <h3 className='text-sm'>{node.subTtile}</h3>
+            <h2 className='text-xl md:text-2xl lg:text-4xl'>{node.title}</h2>
+            <h3 className='text-sm md:text-xl my-4'>{node.subTtile}</h3>
             {renderRichText(node.description, options)}
           </div>
         </div>

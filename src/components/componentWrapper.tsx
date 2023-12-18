@@ -6,7 +6,7 @@ type Props = {
 
 const ComponentWrapper = ({ children }: Props) => {
   return (
-    <div className='mx-12 my-16'>{children}</div>
+    <div className='mx-12 py-16'>{children}</div>
   )
 }
 
