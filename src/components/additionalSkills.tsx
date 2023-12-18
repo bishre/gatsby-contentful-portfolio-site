@@ -24,7 +24,7 @@ const AdditionalSkills = (props: Props) => {
 
   return (
     <div ref={ref}>
-      <h2 className='text-3xl my-12'>Additional technologies and Skills</h2>
+      <h2 className='text-3xl my-12'>Additional Technologies and Skills</h2>
       <ul className={`grid grid-cols-3 mx-60 ${inView ? 'opacity-100' : 'opacity-0'}`}>
         <li className='list-styles stagger'><p>Git</p></li>
         <li className='list-styles stagger'><p>Linux</p></li>
@@ -33,7 +33,7 @@ const AdditionalSkills = (props: Props) => {
         <li className='list-styles stagger'><p>Python</p></li>
         <li className='list-styles stagger'><p>Django</p></li>
         <li className='list-styles stagger'><p>A11y</p></li>
-        <li className='list-styles stagger'><p>Virtual Private Servers</p></li>
+        <li className='list-styles stagger'><p>VPS</p></li>
       </ul>
     </div>
   )

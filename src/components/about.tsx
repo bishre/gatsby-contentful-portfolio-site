@@ -46,7 +46,7 @@ const About = (props: Props) => {
           <div className='w-40 h-40 lg:w-80 lg:h-80 mb-4 mx-auto rounded-full overflow-hidden'>
             <img className='transition transform translate-y-0 hover:-translate-y-4 hover:cursor-pointer' src={node.image.file.url} alt="" />
           </div>
-          <div className='my-auto'>
+          <div className='my-auto flex flex-col items-center'>
             <h2 className='text-xl md:text-2xl lg:text-4xl'>{node.title}</h2>
             <h3 className='text-sm md:text-xl my-4'>{node.subTtile}</h3>
             {renderRichText(node.description, options)}
