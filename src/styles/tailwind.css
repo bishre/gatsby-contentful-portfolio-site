@@ -12,7 +12,6 @@ body {
 
 .list-styles {
   padding: 20px 0px;
-  font-size: 3xl;
   & > p {
     text-align: left;
     &::before {

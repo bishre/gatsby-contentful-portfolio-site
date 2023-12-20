@@ -1,6 +1,10 @@
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer';
+import ComponentWrapper from './componentWrapper';
+
+gsap.registerPlugin(ScrollTrigger)
 
 type Props = {}
 
@@ -11,31 +15,37 @@ const AdditionalSkills = (props: Props) => {
   });
 
   useEffect(() => {
-    if (!inView) return
-    const textElements = document.querySelectorAll(".stagger")
-    gsap.from(textElements, {
-      duration: 0.4,
-      opacity: 0,
-      y: 50,
-      stagger: 0.1,
-      ease: "power2.out"
-    })
+    if (inView) {
+      const textElements = document.querySelectorAll(".stagger")
+      gsap.fromTo(textElements, {
+        opacity: 0,
+        y: 50
+      }, {
+        duration: 0.4,
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        ease: "power2.out"
+      })
+    }
   }, [inView])
 
   return (
-    <div ref={ref}>
-      <h2 className='text-3xl my-12'>Additional Technologies and Skills</h2>
-      <ul className={`grid grid-cols-3 mx-60 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-        <li className='list-styles stagger'><p>Git</p></li>
-        <li className='list-styles stagger'><p>Linux</p></li>
-        <li className='list-styles stagger'><p>B1 Finnish</p></li>
-        <li className='list-styles stagger'><p>MobX</p></li>
-        <li className='list-styles stagger'><p>Python</p></li>
-        <li className='list-styles stagger'><p>Django</p></li>
-        <li className='list-styles stagger'><p>A11y</p></li>
-        <li className='list-styles stagger'><p>VPS</p></li>
-      </ul>
-    </div>
+    <ComponentWrapper>
+      <div ref={ref}>
+        <h2 className='text-3xl my-12'>Additional Technologies and Skills</h2>
+        <ul className={`grid grid-cols-3 lg:mx-60 stagger-skills`}>
+          <li className='list-styles stagger opacity-0'><p>Git</p></li>
+          <li className='list-styles stagger opacity-0'><p>Linux</p></li>
+          <li className='list-styles stagger opacity-0'><p>B1 Finnish</p></li>
+          <li className='list-styles stagger opacity-0'><p>MobX</p></li>
+          <li className='list-styles stagger opacity-0'><p>Python</p></li>
+          <li className='list-styles stagger opacity-0'><p>Django</p></li>
+          <li className='list-styles stagger opacity-0'><p>A11y</p></li>
+          <li className='list-styles stagger opacity-0'><p>VPS</p></li>
+        </ul>
+      </div>
+    </ComponentWrapper>
   )
 }
 

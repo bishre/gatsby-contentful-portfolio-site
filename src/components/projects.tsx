@@ -34,7 +34,7 @@ const Projects = (props: Props) => {
   return (
     <ComponentWrapper>
       <h2 className='text-xl md:text-2xl lg:text-4xl my-12'>Recent Projects</h2>
-      <div className='grid grid-cols-2 gap-4'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-4'>
         {projectEntries.map(({ node }) => (
           <Project node={node}/>
         ))}
