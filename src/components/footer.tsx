@@ -30,13 +30,13 @@ const Footer = (props: Props) => {
       }}
       >
         <div ref={ref} className={`grid grid-cols-12 p-2 ${inView ? 'opacity-100' : 'opacity-0'}`}>
-          <div className='col-start-1 col-span-3 footer-stagger'>
+          <div className='col-start-1 col-span-6 lg:col-span-3 footer-stagger'>
             © {new Date().getFullYear()} &middot; Bibhor Shrestha
           </div>
-          <div className='col-start-4 col-span-3 footer-stagger'>
+          <div className='col-start-1 col-span-6 lg:col-start-4 lg:col-span-3 footer-stagger'>
             <a href="mailto:bibhorshrestha@gmail.com">bibhorshrestha@gmail.com</a>
           </div>
-          <div className='col-start-7 col-span-3 footer-stagger'>
+          <div className='col-start-1 col-span-6 lg:col-start-7 lg:col-span-3 footer-stagger'>
             <a href="tel:+358458748705">+358 458 748 705</a>
           </div>
           <div className='col-start-10 col-span-3 flex justify-around footer-stagger'>
