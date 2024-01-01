@@ -15,9 +15,13 @@ import "../styles/tailwind.css";
 import LanguageSwitcher from "./languageSwitcher";
 import Footer from "./footer";
 import { motion, useScroll, useSpring } from "framer-motion";
+import ScrollToTopButton from "./scrollToTop";
 
+interface ScrollToTopButtonProps {
+  children?: React.ReactNode;
+}
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: ScrollToTopButtonProps) => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -40,6 +44,7 @@ const Layout = ({ children }) => {
       {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
       <div className="relative">
         <LanguageSwitcher />
+        <ScrollToTopButton />
         <main>{children}</main>
         <Footer />
       </div>

@@ -18,7 +18,7 @@ const About = (props: Props) => {
 
   useEffect(() => {
     gsap.to('.about-text', {
-      yPercent: 100,
+      yPercent: 50,
       ease: 'none',
       scrollTrigger: {
         trigger: '.about-text',
@@ -26,7 +26,7 @@ const About = (props: Props) => {
       }
     })
     gsap.to('.about-image', {
-      yPercent: 100,
+      yPercent: 50,
       ease: 'none',
       scrollTrigger: {
         trigger: '.about-image',
