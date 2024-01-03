@@ -34,7 +34,7 @@ const AdditionalSkills = (props: Props) => {
     <ComponentWrapper>
       <div ref={ref}>
         <h2 className='text-3xl my-12'>Additional Technologies and Skills</h2>
-        <ul className={`grid grid-cols-3 lg:mx-60 stagger-skills`}>
+        <ul className={`grid grid-cols-2 lg:grid-cols-3 lg:mx-60 stagger-skills`}>
           <li className='list-styles stagger opacity-0'><p>Git</p></li>
           <li className='list-styles stagger opacity-0'><p>Linux</p></li>
           <li className='list-styles stagger opacity-0'><p>B1 Finnish</p></li>

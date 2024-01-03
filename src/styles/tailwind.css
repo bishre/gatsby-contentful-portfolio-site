@@ -37,3 +37,7 @@ body {
   transform-origin: 0%;
   z-index: 1;
 }
+
+.scroll-to-top-button {
+  background-color: var(--color-primary);
+}
