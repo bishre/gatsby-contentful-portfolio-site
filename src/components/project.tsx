@@ -25,7 +25,7 @@ const Project = ({ node }: Project) => {
       <div ref={ref} className={`${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
         <div className='rounded overflow-hidden group'>
           <RatioContainer width={16} height={9}>
-            <img className='transition transition-transform scale-110 group-hover:scale-100 duration-300 object-cover' src={node.image.file.url} alt="" />
+            <img className='transition transition-transform scale-110 group-hover:scale-100 duration-300 object-cover' src={node.image?.file.url} alt="" />
           </RatioContainer>
         </div>
         <h2>{node.title}</h2>
