@@ -14,10 +14,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Bibhor Shrestha`,
+    description: `Portfolio website of Finland-based web developer.`,
+    author: `@beevorr`,
+    siteUrl: `https://sweet-tulumba-dfe964.netlify.app/`,
   },
   plugins: [
     {
@@ -66,6 +66,15 @@ module.exports = {
       options: {
         offset: -100
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        // The unique name for each instance
+        name: `data`,
+        // Path to the directory
+        path: `${__dirname}/src/data/`,
+      },
+    },
   ],
 }

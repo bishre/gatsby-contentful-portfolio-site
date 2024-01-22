@@ -38,7 +38,7 @@ const Hero = ({ title, description, heroImage }: Props) => {
     <div className='relative'>
       <div className='absolute w-50 top-1/2 text-white text-3xl transform -translate-y-1/2 mx-4 lg:mx-16 z-10'>
         <div ref={ref} className={`${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
-          <h2 className="text-4xl md:text-8xl lg:my-8 capitalize align-left" id='animated-text'>{title}</h2>
+          <h2 className="text-2xl md:text-6xl lg:my-8 capitalize align-left" id='animated-text'>{title}</h2>
           <div className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex bg-clip-text text-xl md:text-2xl lg:text-4xl ml-2`}>
             <p className="hero-stagger mr-2">Full </p>
             <p className="hero-stagger mr-2">Stack </p>

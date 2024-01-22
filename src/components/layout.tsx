@@ -41,7 +41,7 @@ const Layout = ({ children }: ScrollToTopButtonProps) => {
   return (
     <>
       <motion.div className="progress-bar" style={{ scaleX }} />
-      {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div className="relative">
         <LanguageSwitcher />
         <ScrollToTopButton />
