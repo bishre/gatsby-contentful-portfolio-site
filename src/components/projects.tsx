@@ -33,7 +33,7 @@ const Projects = (props: Props) => {
   const projectEntries = allContentfulProject.edges
   return (
     <ComponentWrapper>
-      <h2 className='text-xl md:text-2xl lg:text-4xl my-12'>Recent Projects</h2>
+      <h2 className='text-xl md:text-2xl lg:text-4xl my-12'>Projects & Websites</h2>
       <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-4'>
         {projectEntries.map(({ node }) => (
           <Project node={node}/>

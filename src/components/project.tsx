@@ -28,13 +28,16 @@ const Project = ({ node }: Project) => {
             <img className='transition transition-transform scale-110 group-hover:scale-100 duration-300 object-cover' src={node.image?.file.url} alt="" />
           </RatioContainer>
         </div>
-        <h2>{node.title}</h2>
-        <p className='text-xs'>{node.description}</p>
-        <a href={node.link} target='_blank'>
-          <button className='px-4 py-2 m-4 text-sm bg-purple-500 hover:bg-blue-700 transition duration-300 ease-in-out text-white rounded-full'>
-            Go to site
-          </button>
-        </a>
+        <div className='flex flex-col items-center'>
+          <h2>{node.title}</h2>
+          <p className='text-xs'>{node.description}</p>
+          <a href={node.link} target='_blank'>
+            <button className='px-4 py-2 m-4 text-sm bg-purple-500 hover:bg-blue-700 transition duration-300 ease-in-out text-white rounded-full'>
+              Go to site
+            </button>
+          </a>
+        </div>
+
       </div>
     </>
   )
