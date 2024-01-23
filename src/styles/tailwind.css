@@ -41,3 +41,7 @@ body {
 .scroll-to-top-button {
   background-color: var(--color-primary);
 }
+
+.markdown > p {
+  margin-bottom: 1rem;
+}
