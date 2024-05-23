@@ -18,7 +18,6 @@ const About = (props: Props) => {
 
   useEffect(() => {
     gsap.to('.about-text', {
-      yPercent: 50,
       ease: 'none',
       scrollTrigger: {
         trigger: '.about-text',
@@ -26,7 +25,6 @@ const About = (props: Props) => {
       }
     })
     gsap.to('.about-image', {
-      yPercent: 50,
       ease: 'none',
       scrollTrigger: {
         trigger: '.about-image',
@@ -67,7 +65,7 @@ const About = (props: Props) => {
       {aboutEntries.map(({ node }) => (
         <div ref={ref} className={`lg:grid grid-cols-2 gap-4 ${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
           <div className='w-40 h-40 lg:w-80 lg:h-80 mb-4 mx-auto rounded-full overflow-hidden about-image'>
-            <img className='transition transform translate-y-0 hover:-translate-y-4 hover:cursor-pointer' src={node.image.file.url} alt="" />
+            <img className='transition transform translate-y-0' src={node.image.file.url} alt="" />
           </div>
           <div className='my-auto flex flex-col items-center about-text mt-16'>
             <h2 className='text-xl md:text-2xl lg:text-4xl'>{node.title}</h2>
