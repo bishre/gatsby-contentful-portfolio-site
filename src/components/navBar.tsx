@@ -1,27 +1,15 @@
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import React from 'react'
+import Navigation from './navigaion';
+import LanguageSwitcher from './languageSwitcher';
 
-type Props = {}
-
-const NavBar = (props: Props) => {
+const NavBar = () => {
   return (
-    <ul className='col-start-2 flex justify-between p-4'>
-      <li>
-        <AnchorLink to='/' title='Home'>
-          <span>Home</span>
-        </AnchorLink>
-      </li>
-      <li>
-        <AnchorLink to='#about-me' title='About me'>
-          <span>About me</span>
-        </AnchorLink>
-      </li>
-      <li>
-        <AnchorLink to='#contact-me' title='Contact me'>
-          <span>Contact me</span>
-        </AnchorLink>
-      </li>
-    </ul>
+    <div className='absolute top-20 z-10 right-20 flex'>
+      <ul className='col-start-2 flex justify-between p-4'>
+        <Navigation />
+        <LanguageSwitcher />
+      </ul>
+    </div>
   )
 }
 

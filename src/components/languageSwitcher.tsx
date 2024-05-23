@@ -1,14 +1,16 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
-type Props = {}
-
-const LanguageSwitcher = (props: Props) => {
+const LanguageSwitcher = () => {
   return (
-    <div className='absolute top-20 z-10 right-20'>
-        <Link to='/'><span className='p-4'>ENG</span></Link>
-        <Link to='/finnish'><span>FIN</span></Link>
-    </div>
+    <>
+      <li className='py-4 pl-12 pr-2 list-none'>
+        <Link to='/'><span>EN</span></Link>
+      </li>
+      <li className='py-4 list-none'>
+        <Link to='/finnish'><span>FI</span></Link>
+      </li>
+    </>
   )
 }
 
