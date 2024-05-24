@@ -8,6 +8,8 @@ import LanguageSwitcher from "./languageSwitcher";
 import Footer from "./footer";
 import ScrollToTopButton from "./scrollToTop";
 import NavBar from "./navBar";
+import MobileNavigation from "./mobileNavigation";
+import useMobile from "../hooks/useMobile";
 
 interface ScrollToTopButtonProps {
   children?: React.ReactNode;
@@ -23,13 +25,15 @@ const Layout = ({ children }: ScrollToTopButtonProps) => {
       }
     }
   `)
-
+  const isMobile = useMobile()
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div className="relative">
-        <NavBar />
-        <ScrollToTopButton />
+        <div className='absolute w-full top-0 z-10 flex md:justify-end'>
+          {isMobile ? <MobileNavigation /> : <NavBar />}
+        </div>
+        {/* <ScrollToTopButton /> */}
         <main>{children}</main>
         <Footer />
       </div>
