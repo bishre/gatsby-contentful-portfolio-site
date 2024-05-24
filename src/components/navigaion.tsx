@@ -15,8 +15,8 @@ interface NavigationData {
 }
 
 const Navigation = () => {
-  const { toggleOpen } = useContext(UIContext) as UIContextType
-
+  const uiContext = useContext(UIContext) as UIContextType
+  const { toggleOpen } = uiContext
   const data = useStaticQuery<NavigationData>(graphql`
     query {
       allContentfulMenuItem(sort: { fields: order, order: ASC }) {

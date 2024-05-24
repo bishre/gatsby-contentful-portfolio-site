@@ -3,7 +3,8 @@ import React, { useContext } from 'react'
 import { UIContext, UIContextType } from '../context/uiContext'
 
 const LanguageSwitcher = () => {
-  const { toggleOpen } = useContext(UIContext) as UIContextType
+  const uiContext = useContext(UIContext) as UIContextType
+  const { toggleOpen } = uiContext
   return (
     <ul className='flex flex-row'>
       <li onClick={toggleOpen} className='py-4 md:pl-12 pr-2 list-none'>
