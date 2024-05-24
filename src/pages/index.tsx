@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useContext, useState } from "react";
 import { Link, graphql, PageProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
@@ -6,6 +6,7 @@ import Seo from "../components/seo";
 import * as styles from "../components/index.module.css";
 import Hero from "../components/hero";
 
+import { UIContextProvider } from '../context/uiContext'
 import '../styles/tailwind.css';
 import Education from "../components/education";
 import Experience from "../components/experience";
@@ -43,7 +44,9 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   const { allContentfulHero } = data;
   const heroEntries = allContentfulHero.edges;
+
   return (
+    <UIContextProvider>
     <Layout>
       <div className={styles.textCenter}>
         {heroEntries.map(({ node }) => (
@@ -64,6 +67,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
         <Experience /> */}
       </div>
     </Layout>
+    </UIContextProvider>
   );
 };
 

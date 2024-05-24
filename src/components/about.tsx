@@ -63,7 +63,7 @@ const About = (props: Props) => {
   return (
     <ComponentWrapper>
       {aboutEntries.map(({ node }) => (
-        <div ref={ref} className={`lg:grid grid-cols-2 gap-4 ${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
+        <div id="about" ref={ref} className={`lg:grid grid-cols-2 gap-4 ${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
           <div className='w-40 h-40 lg:w-80 lg:h-80 mb-4 mx-auto rounded-full overflow-hidden about-image'>
             <img className='transition transform translate-y-0' src={node.image.file.url} alt="" />
           </div>

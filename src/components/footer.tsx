@@ -29,7 +29,7 @@ const Footer = (props: Props) => {
         padding: `var(--space-1)`,
       }}
       >
-        <div ref={ref} className={`grid grid-cols-12 p-2 ${inView ? 'opacity-100' : 'opacity-0'}`}>
+        <div id="contact" ref={ref} className={`grid grid-cols-12 p-2 ${inView ? 'opacity-100' : 'opacity-0'}`}>
           <div className='col-start-1 col-span-6 lg:col-span-3 footer-stagger'>
             © {new Date().getFullYear()} &middot; Bibhor Shrestha
           </div>
