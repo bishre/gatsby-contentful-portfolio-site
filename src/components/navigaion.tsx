@@ -16,6 +16,10 @@ interface NavigationData {
 
 const Navigation = () => {
   const uiContext = useContext(UIContext) as UIContextType
+  if (!uiContext) {
+    return null
+  }
+
   const { toggleOpen } = uiContext
   const data = useStaticQuery<NavigationData>(graphql`
     query {

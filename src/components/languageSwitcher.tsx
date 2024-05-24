@@ -4,6 +4,9 @@ import { UIContext, UIContextType } from '../context/uiContext'
 
 const LanguageSwitcher = () => {
   const uiContext = useContext(UIContext) as UIContextType
+  if (!uiContext) {
+    return null
+  }
   const { toggleOpen } = uiContext
   return (
     <ul className='flex flex-row'>
