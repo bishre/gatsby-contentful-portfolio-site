@@ -1,8 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import React, { useContext } from 'react'
-import useMobile from '../hooks/useMobile';
-import { UIContext } from '../context/uiContext';
+import { UIContext, UIContextType } from '../context/uiContext';
 
 interface MenuItem {
   title: string;
@@ -16,7 +15,7 @@ interface NavigationData {
 }
 
 const Navigation = () => {
-  const { isOpen, setIsOpen } = useContext(UIContext)
+  const { toggleOpen } = useContext(UIContext) as UIContextType
 
   const data = useStaticQuery<NavigationData>(graphql`
     query {
@@ -34,8 +33,8 @@ const Navigation = () => {
   return (
     <>
       {
-        menuItems.map(item => (
-          <li className='p-0 md:p-4' onClick={() => setIsOpen(false)}>
+        menuItems.map((item, i) => (
+          <li key={i} className='p-0 md:p-4' onClick={toggleOpen}>
             <AnchorLink to={`${item.slug}`} title={item.title}>
               <span>{item.title}</span>
             </AnchorLink>

@@ -1,12 +1,25 @@
-import React, { createContext, useState } from "react";
+import React, { ReactNode, createContext, useState } from "react";
 
-export const UIContext = createContext({});
+export interface UIContextType {
+  isOpen: boolean;
+  toggleOpen: () => void;
+}
 
-export const UIContextProvider = ({children}) => {
+export const UIContext = createContext<UIContextType | null>(null);
+
+interface UIContextProviderProps {
+  children: ReactNode;
+}
+
+export const UIContextProvider = ({ children }: UIContextProviderProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
+  const toggleOpen = () => {
+    setIsOpen((prev) => !prev)
+  }
+
   return (
-    <UIContext.Provider value={{ isOpen, setIsOpen }}>
+    <UIContext.Provider value={{ isOpen, toggleOpen }}>
       {children}
     </UIContext.Provider>
   )

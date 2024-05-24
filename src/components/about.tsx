@@ -63,11 +63,11 @@ const About = (props: Props) => {
   return (
     <ComponentWrapper>
       {aboutEntries.map(({ node }) => (
-        <div id="about" ref={ref} className={`lg:grid grid-cols-2 gap-4 ${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
-          <div className='w-40 h-40 lg:w-80 lg:h-80 mb-4 mx-auto rounded-full overflow-hidden about-image'>
+        <div key={node.title} id="about" ref={ref} className={`lg:grid grid-cols-2 gap-4 ${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
+          <div className='w-40 h-40 lg:w-80 lg:h-80 mb-4 mx-auto self-center rounded-full overflow-hidden about-image'>
             <img className='transition transform translate-y-0' src={node.image.file.url} alt="" />
           </div>
-          <div className='my-auto flex flex-col items-center about-text mt-16'>
+          <div className='my-auto flex flex-col items-center about-text mt-8 md:mt-0'>
             <h2 className='text-xl md:text-2xl lg:text-4xl'>{node.title}</h2>
             <h3 className='text-sm md:text-xl my-4'>{node.subTtile}</h3>
             {renderRichText(node.description, options)}
