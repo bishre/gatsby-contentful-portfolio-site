@@ -16,23 +16,6 @@ const About = (props: Props) => {
     threshold: 0.2
   });
 
-  useEffect(() => {
-    gsap.to('.about-text', {
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.about-text',
-        scrub: true
-      }
-    })
-    gsap.to('.about-image', {
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.about-image',
-        scrub: true
-      }
-    })
-  }, [])
-
   const data = useStaticQuery(graphql`
     query {
       allContentfulTextImageDescription {
