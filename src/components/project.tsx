@@ -34,7 +34,7 @@ const Project = ({ node }: Project) => {
         start: 'top bottom',
         scrub: true,
       },
-      yPercent: 20
+      yPercent: 5
     })
   }, [])
   return (
@@ -49,7 +49,7 @@ const Project = ({ node }: Project) => {
           <h2>{node.title}</h2>
           <p className='text-xs'>{node.description}</p>
           <a href={node.link} target='_blank'>
-            <button className='px-4 py-2 m-4 text-sm bg-purple-500 hover:bg-blue-700 transition duration-300 ease-in-out text-white rounded-full'>
+            <button className='px-4 py-2 m-4 text-sm bg-white hover:bg-purple-500 transition duration-300 ease-in-out text-black hover:text-white brounded-full'>
               Go to site
             </button>
           </a>

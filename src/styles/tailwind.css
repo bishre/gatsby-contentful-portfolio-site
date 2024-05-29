@@ -22,7 +22,10 @@ body {
       margin-right: 1rem;
       border-radius: 50%;
       vertical-align: middle;
-      background-image: linear-gradient(to bottom right, rgb(99 102 241), rgb(236 72 153));
+      /* background-image: linear-gradient(to bottom right, rgb(255 255 255), rgb(168 85 247)); */
+    }
+    & > span {
+      margin-left: 1rem;
     }
   }
 }

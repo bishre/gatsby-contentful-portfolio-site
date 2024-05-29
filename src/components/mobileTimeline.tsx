@@ -7,10 +7,10 @@ import { timelineData } from '../json/timeline';
 
 type Props = {}
 
-const Timeline = (props: Props) => {
+const MobileTimeline = (props: Props) => {
   const [ref, inView] = useInView({
     triggerOnce: true, // Trigger animation only once
-    threshold: 1
+    threshold: 0.1
   });
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Timeline = (props: Props) => {
     gsap.from(timelines, {
       duration: 1,
       opacity: 0,
-      width: 0,
+      height: 0,
       stagger: 0.1,
       ease: "power2.out"
     })
@@ -37,17 +37,12 @@ const Timeline = (props: Props) => {
     <ComponentWrapper>
       <h2 className='text-3xl my-12'>About me</h2>
       <div ref={ref} className={`${inView ? 'opacity-100' : 'opacity-0'}`}>
-        <ul className="grid grid-cols-4">
+        <ul>
           {timelineData.map(item => (
-            <li className="stagger-timeline">
-            <div>
-              <h3 className="text-left">{item.date}</h3>
-              <div className="flex items-center mt-1 mb-2">
-                <div className="rounded-full w-4 h-4 row-start-2 col-span-12 bg-gradient-to-br from-white to-purple-500 timepoint"></div>
-                <div className="h-1 w-full bg-purple-500 timeline"></div>
-              </div>
-              <p className="text-left text-xs mr-2">{item.details}</p>
-            </div>
+            <li className="stagger-timeline m-0">
+            <Milestone
+              {...item}
+            />
           </li>
           ))}
         </ul>
@@ -56,4 +51,4 @@ const Timeline = (props: Props) => {
   )
 }
 
-export default Timeline
+export default MobileTimeline
