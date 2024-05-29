@@ -15,6 +15,8 @@ import About from "../components/about";
 import Skills from "../components/skills";
 import Timeline from "../components/timeline";
 import AdditionalSkills from "../components/additionalSkills";
+import useMobile from "../hooks/useMobile";
+import MobileTimeline from "../components/mobileTimeline";
 
 interface ContentfulHero {
   node: {
@@ -45,6 +47,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   const { allContentfulHero } = data;
   const heroEntries = allContentfulHero.edges;
 
+  const isMobile = useMobile()
+
   return (
     <UIContextProvider>
     <Layout>
@@ -62,7 +66,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
         <Projects />
         <Skills />
         <AdditionalSkills />
-        <Timeline />
+        {isMobile ? <MobileTimeline /> : <Timeline />}
         {/* <Education />
         <Experience /> */}
       </div>
