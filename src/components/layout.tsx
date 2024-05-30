@@ -28,12 +28,11 @@ const Layout = ({ children }: ScrollToTopButtonProps) => {
   const isMobile = useMobile()
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div className="relative">
-        <div className='absolute w-full top-0 z-10 flex md:justify-end'>
+        <div className='absolute w-full top-0 z-10 flex md:justify-end fixed'>
           {isMobile ? <MobileNavigation /> : <NavBar />}
         </div>
-        {/* <ScrollToTopButton /> */}
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
         <Footer />
       </div>

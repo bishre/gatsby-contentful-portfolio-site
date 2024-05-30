@@ -27,11 +27,11 @@ const Hero = ({ title, description, heroImage }: Props) => {
   useEffect(() => {
     gsap.to('.hero-img', {
       scrollTrigger: {
-        trigger: '.hero',
+        trigger: '.hero-img',
         start: 'top top',
         scrub: true
       },
-      yPercent:50
+      yPercent: 10
     })
   }, [])
 
