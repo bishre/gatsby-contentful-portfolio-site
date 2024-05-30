@@ -35,7 +35,7 @@ const Timeline = (props: Props) => {
 
   return (
     <ComponentWrapper>
-      <h2 className='text-3xl my-12'>About me</h2>
+      <h2 className='text-3xl my-12'>My Journey</h2>
       <div ref={ref} className={`${inView ? 'opacity-100' : 'opacity-0'}`}>
         <ul className="grid grid-cols-4">
           {timelineData.map(item => (
