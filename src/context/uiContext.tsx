@@ -5,7 +5,10 @@ export interface UIContextType {
   toggleOpen: () => void;
 }
 
-export const UIContext = createContext<UIContextType | undefined>(undefined);
+export const UIContext = createContext<UIContextType | undefined>({
+  isOpen: false,
+  toggleOpen: () => {}
+});
 
 interface UIContextProviderProps {
   children: ReactNode;
