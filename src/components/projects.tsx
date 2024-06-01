@@ -33,12 +33,14 @@ const Projects = (props: Props) => {
   const projectEntries = allContentfulProject.edges
   return (
     <ComponentWrapper>
-      <h2 className='text-xl md:text-2xl lg:text-4xl my-12'>Projects & Websites</h2>
-      <div id="work" className='grid grid-cols-1 md:grid-cols-2 md:gap-4'>
-        {projectEntries.map(({ node }) => (
+      <h2 id="work" className='text-xl md:text-2xl lg:text-4xl my-12'>Projects & Websites</h2>
+      <ul className='grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-8'>
+      {projectEntries.map(({ node }, i) => (
+        <li key={i}>
           <Project node={node}/>
-        ))}
-      </div>
+        </li>
+      ))}
+      </ul>
     </ComponentWrapper>
   )
 }

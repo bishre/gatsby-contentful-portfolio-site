@@ -38,8 +38,8 @@ const Timeline = (props: Props) => {
       <h2 className='text-3xl my-12'>My Journey</h2>
       <div ref={ref} className={`${inView ? 'opacity-100' : 'opacity-0'}`}>
         <ul className="grid grid-cols-4">
-          {timelineData.map(item => (
-            <li className="stagger-timeline">
+          {timelineData.map((item, i) => (
+            <li key={i} className="stagger-timeline">
             <div>
               <h3 className="text-left">{item.date}</h3>
               <div className="flex items-center mt-1 mb-2">

@@ -17,6 +17,7 @@ import Timeline from "../components/timeline";
 import AdditionalSkills from "../components/additionalSkills";
 import useMobile from "../hooks/useMobile";
 import MobileTimeline from "../components/mobileTimeline";
+import ContactForm from "../components/contactForm";
 
 interface ContentfulHero {
   node: {
@@ -67,8 +68,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
         <Skills />
         <AdditionalSkills />
         {isMobile ? <MobileTimeline /> : <Timeline />}
-        {/* <Education />
-        <Experience /> */}
+        <ContactForm />
       </div>
     </Layout>
     </UIContextProvider>
