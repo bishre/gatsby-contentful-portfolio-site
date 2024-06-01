@@ -38,9 +38,9 @@ const Navigation = () => {
     <>
       {
         menuItems.map((item, i) => (
-          <li key={i} className='p-0 md:p-4' onClick={toggleOpen}>
+          <li key={i} className='p-0 md:p-4 group' onClick={toggleOpen}>
             <AnchorLink to={`${item.slug}`} title={item.title}>
-              <span>{item.title}</span>
+              <span className='transition transition-all group-hover:text-purple-500'>{item.title}</span>
             </AnchorLink>
           </li>
         ))

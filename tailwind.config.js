@@ -7,7 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#121212'
+        primary: '#121212',
+        accent: '#A855F7'
+      },
+      width: {
+        'xl': '48rem',
+        '2xl': '60rem'
       }
     },
   },

@@ -41,18 +41,19 @@ const Project = ({ node }: Project) => {
     <>
       <div ref={ref} className={`${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
         <div className='relative rounded group'>
-          <div className='flex overflow-hidden items-center justify-center w-72 h-52 lg:w-96 lg:h-72 bg-white mx-auto'>
-            <img ref={imageRef} className='w-96 h-80 lg:w-128 lg:h-96 object-cover transition transition-transform scale-110 group-hover:scale-100 duration-300 object-cover' src={node.image?.file.url} alt="" />
-          </div>
-        </div>
-        <div className='flex flex-col items-center'>
-          <h2>{node.title}</h2>
-          <p className='text-xs'>{node.description}</p>
-          <a href={node.link} target='_blank'>
-            <button className='px-4 py-2 m-4 text-sm bg-white hover:bg-purple-500 transition duration-300 ease-in-out text-black hover:text-white brounded-full'>
+          <a className='absolute top-1/2 left-1/2 z-10 transform -translate-x-1/2 -translate-y-1/2' href={node.link} target='_blank'>
+            <button className='px-4 py-2 m-4 text-sm bg-white opacity-50 hover:bg-purple-500 hover:opacity-100 transition transition-all duration-300 ease-in-out text-black hover:text-white brounded-full'>
               Go to site
             </button>
           </a>
+          <div className='flex overflow-hidden items-center justify-center w-full h-52 lg:h-72 bg-white mx-auto'>
+            <img ref={imageRef} className='w-96 h-80 md:w-xl
+             lg:w-2xl object-cover transition transition-all scale-110 brightness-100 group-hover:brightness-50 duration-300 object-cover' src={node.image?.file.url} alt="" />
+          </div>
+        </div>
+        <div className='flex flex-col items-start'>
+          <h3 className='text-sm'>{node.title}</h3>
+          <p className='text-sm text-left'>{node.description}</p>
         </div>
 
       </div>
