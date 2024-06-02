@@ -1,19 +1,29 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import logo from '../images/bs_logo.png'
+import { Link, graphql, useStaticQuery } from "gatsby"
+import useMobile from "../hooks/useMobile"
+import MobileNavigation from "./mobileNavigation"
+import NavBar from "./navBar"
+import Logo from "./logo"
 
-interface Props {
-  siteTitle: string
-}
-const Header = ({ siteTitle }: Props) => (
-  <header className="absolute top-0 z-10 grid grid-cols-2 w-full">
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
+  const isMobile = useMobile()
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+  return (
+  <header className="z-10 w-full">
     <h1 className="hidden">{siteTitle}</h1>
-    <div className="p-2 lg:p-4 fixed">
-      <Link to="/">
-        <img className="w-16 h-16 m-0 lg:w-20 lg:h-20" src={logo} alt="Site Logo" />
-      </Link>
-    </div>
+    <Logo />
+    {isMobile ? <MobileNavigation /> : <NavBar />}
   </header>
-)
+)}
 
 export default Header

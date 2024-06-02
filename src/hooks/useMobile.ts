@@ -4,11 +4,11 @@ const useMobile = () => {
   const [isMobile, setIsMobile] = useState(true)
 
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
+    if (typeof window !== "undefined" && window.innerWidth <= 768) {
       setIsMobile(true)
     }
     const handleResize = () => {
-      if (typeof window !== "undefined" && window.innerWidth < 768) {
+      if (typeof window !== "undefined" && window.innerWidth <= 768) {
         setIsMobile(true)
       } else if (window.innerWidth >= 768) {
         setIsMobile(false)

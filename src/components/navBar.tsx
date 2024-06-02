@@ -4,10 +4,12 @@ import LanguageSwitcher from './languageSwitcher';
 
 const NavBar = () => {
   return (
-    <ul className='col-start-2 flex flex-col md:flex-row justify-between p-4'>
-      <Navigation />
-      <LanguageSwitcher />
-    </ul>
+    <div className='lg:absolute lg:right-0'>
+      <ul className='col-start-2 flex flex-col md:flex-row justify-between p-4'>
+        <Navigation />
+        <LanguageSwitcher />
+      </ul>
+    </div>
   )
 }
 
