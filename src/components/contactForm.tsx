@@ -18,7 +18,8 @@ const ContactForm = () => {
 
   return (
     <ComponentWrapper>
-      <form className='flex flex-col' method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
+      <h2 id="contact" className='text-3xl my-12'>Send me a message</h2>
+      <form action='/success' className='flex flex-col md:w-3/4 lg:w-1/2 md:mx-auto' method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
         <label className='flex justify-between'>
@@ -30,7 +31,7 @@ const ContactForm = () => {
         <label className='flex justify-between'>
           Message: <textarea className='bg-transparent border w-2/3 mb-4' name="message" value={formData.message} required onChange={handleChange}></textarea>
         </label>
-        <button className='border w-32 mx-auto' type="submit">Send</button>
+        <button className='border w-32 mx-auto hover:bg-purple-500' type="submit">Send</button>
       </form>
     </ComponentWrapper>
 )};
