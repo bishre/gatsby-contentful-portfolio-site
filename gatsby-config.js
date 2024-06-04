@@ -20,6 +20,7 @@ module.exports = {
     siteUrl: `https://sweet-tulumba-dfe964.netlify.app/`,
   },
   plugins: [
+    'gatsby-plugin-postcss',
     {
       resolve: `gatsby-source-contentful`,
       options: {
