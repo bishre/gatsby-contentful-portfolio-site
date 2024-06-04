@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import ComponentWrapper from './componentWrapper';
+import { navigate } from 'gatsby';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,17 +10,31 @@ const ContactForm = () => {
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    console.log(e.target)
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
   }
 
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success: ', data)
+        navigate('/success')
+      })
+      .catch((error) => alert(error));
+  }
+
   return (
     <ComponentWrapper>
       <h2 id="contact" className='text-3xl my-12'>Send me a message</h2>
-      <form action='/success' className='flex flex-col md:w-3/4 lg:w-1/2 md:mx-auto' method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
+      <form onSubmit={handleSubmit} className='flex flex-col md:w-3/4 lg:w-1/2 md:mx-auto' method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
         <label className='flex justify-between'>
