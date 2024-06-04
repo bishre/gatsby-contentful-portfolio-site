@@ -7,10 +7,10 @@ import Project from './project'
 type Props = {}
 
 const Projects = (props: Props) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Trigger animation only once
-    threshold: 1
-  });
+  // const [ref, inView] = useInView({
+  //   triggerOnce: true, // Trigger animation only once
+  //   threshold: 1
+  // });
   const data = useStaticQuery(graphql`
     query {
       allContentfulProject {

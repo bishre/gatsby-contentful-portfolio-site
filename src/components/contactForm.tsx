@@ -9,6 +9,12 @@ const ContactForm = () => {
     message: ''
   })
 
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -18,14 +24,14 @@ const ContactForm = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
+
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData})
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success: ', data)
+      .then(() => {
+        console.log('Success')
         navigate('/success')
       })
       .catch((error) => alert(error));

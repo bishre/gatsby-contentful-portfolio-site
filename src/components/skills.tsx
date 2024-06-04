@@ -2,9 +2,7 @@ import React from 'react'
 import ComponentWrapper from './componentWrapper'
 import SkillBar from './skillBar'
 
-type Props = {}
-
-const Skills = (props: Props) => {
+const Skills = () => {
   return (
     <ComponentWrapper>
       <h2 id="skills" className='text-3xl my-12'>Skills</h2>
@@ -26,7 +24,6 @@ const Skills = (props: Props) => {
             <SkillBar skill="PHP, Nginx, SEO, Web Analytics" span="4"/>
           </li>
         </ul>
-
       </div>
     </ComponentWrapper>
   )

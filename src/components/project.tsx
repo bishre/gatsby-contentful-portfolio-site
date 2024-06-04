@@ -39,7 +39,7 @@ const Project = ({ node }: Project) => {
   }, [])
   return (
     <>
-      <div ref={ref} className={`${inView ? 'transform translate-y-0 transition-all opacity-100' : 'transform translate-y-1/4 opacity-0'} duration-500 ease-in-out`}>
+      <div className='transform translate-y-0 transition-all'>
         <div className='relative rounded group'>
           <a className='absolute top-1/2 left-1/2 z-10 transform -translate-x-1/2 -translate-y-1/2' href={node.link} target='_blank'>
             <button className='px-4 py-2 m-4 text-sm bg-white opacity-50 hover:bg-purple-500 hover:opacity-100 transition transition-all duration-300 ease-in-out text-black hover:text-white brounded-full'>
