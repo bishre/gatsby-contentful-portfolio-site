@@ -9,19 +9,19 @@ const Skills = () => {
       <div >
         <ul>
           <li>
-            <SkillBar skill="HTML5, CSS3, JS6" span="12"/>
+            <SkillBar skill="HTML5, CSS3, JS6" widthClass="w-5/5"/>
           </li>
           <li>
-            <SkillBar skill="ReactJS, NextJS, GatsbyJS" span="12"/>
+            <SkillBar skill="ReactJS, NextJS, GatsbyJS" widthClass="w-5/5"/>
           </li>
           <li>
-            <SkillBar skill="NodeJS, Docker, Wordpress" span="6"/>
+            <SkillBar skill="NodeJS, Docker, Wordpress" widthClass="w-3/5"/>
           </li>
           <li>
-            <SkillBar skill="Typescript, Redux" span="6"/>
+            <SkillBar skill="Typescript, Redux" widthClass="w-3/5"/>
           </li>
           <li>
-            <SkillBar skill="PHP, Nginx, SEO, Web Analytics" span="4"/>
+            <SkillBar skill="PHP, Nginx, SEO, Web Analytics" widthClass="w-1/5"/>
           </li>
         </ul>
       </div>
