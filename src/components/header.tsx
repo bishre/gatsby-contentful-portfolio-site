@@ -19,7 +19,7 @@ const Header = () => {
   const isMobile = useMobile()
   const siteTitle = data.site.siteMetadata?.title || `Title`
   return (
-  <header className="z-10 w-full">
+  <header className="relative z-10 w-full">
     <h1 className="hidden">{siteTitle}</h1>
     <Logo />
     {isMobile ? <MobileNavigation /> : <NavBar />}

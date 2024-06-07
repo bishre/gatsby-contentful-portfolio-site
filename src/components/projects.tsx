@@ -1,16 +1,27 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ComponentWrapper from './componentWrapper'
 import { useInView } from 'react-intersection-observer'
 import Project from './project'
+import gsap from 'gsap'
 
-type Props = {}
 
-const Projects = (props: Props) => {
-  // const [ref, inView] = useInView({
-  //   triggerOnce: true, // Trigger animation only once
-  //   threshold: 1
-  // });
+const Projects = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Trigger animation only once
+    threshold: 0.1
+  })
+
+  useEffect(() => {
+    if (inView) {
+      gsap.fromTo(
+        '.project',
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.2, duration: 1 }
+      );
+    }
+  }, [inView])
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulProject {
@@ -34,9 +45,9 @@ const Projects = (props: Props) => {
   return (
     <ComponentWrapper>
       <h2 id="work" className='text-xl md:text-2xl lg:text-4xl my-12'>Projects & Websites</h2>
-      <ul className='grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-8'>
+      <ul ref={ref} className='grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-8'>
       {projectEntries.map(({ node }, i) => (
-        <li key={i}>
+        <li className='project opacity-0' key={i}>
           <Project node={node}/>
         </li>
       ))}
